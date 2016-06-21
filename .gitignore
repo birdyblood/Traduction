@@ -1,0 +1,9 @@
+# Ignore IntelliJ program
+*.iml
+*.ipr
+*.iws
+.idea
+
+# Ignore Gradle 
+build/**
+.gradle

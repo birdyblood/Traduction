@@ -1,4 +1,4 @@
-package com.michelin.foa.traduction;
+package com.bb.traduction;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -9,7 +9,7 @@ import java.sql.*;
  * Key identity of one key and the name.
  * Created by FP11523 on 21/02/2016.
  */
-public class KeyIdentity implements Closeable {
+class KeyIdentity implements Closeable {
 
     /**
      * DB connection.
@@ -20,7 +20,7 @@ public class KeyIdentity implements Closeable {
     /**
      * Singleton.
      */
-    public KeyIdentity() {
+    KeyIdentity() {
         try {
             //
             Class.forName("org.h2.Driver");
@@ -38,7 +38,7 @@ public class KeyIdentity implements Closeable {
      * @param typeFile the type of the file
      * @return a string.
      */
-    public String getIdentity(String typeFile, String key) {
+    String getIdentity(String typeFile, String key) {
         try {
             return findKeyFromProperties(key, typeFile);
         } catch (SQLException e) {

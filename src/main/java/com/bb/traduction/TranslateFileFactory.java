@@ -1,4 +1,4 @@
-package com.michelin.foa.traduction;
+package com.bb.traduction;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -11,7 +11,7 @@ import java.util.Properties;
  * Factory for {@link TranslateFile}.
  * Created by FP11523 on 20/02/2016.
  */
-public class TranslateFileFactory {
+class TranslateFileFactory {
 
     /**
      * Build a translate file.
@@ -19,7 +19,7 @@ public class TranslateFileFactory {
      * @param path the path of the properties file.
      * @return the translate file.
      */
-    public TranslateFile buildTranslateFile(String path) {
+    TranslateFile buildTranslateFile(String path) {
         final TranslateFile translateFile = new TranslateFile();
 
         try (FileInputStream inputStream = new FileInputStream(path)) {
@@ -42,10 +42,10 @@ public class TranslateFileFactory {
     /**
      * Retrieve the lang.
      *
-     * @param path
-     * @return
+     * @param path the path.
+     * @return the lang in the path.
      */
-    protected String retrieveLang(String path) {
+    String retrieveLang(String path) {
         final String pathWithoutExtension = StringUtils.removeEnd(path, ".properties");
         return StringUtils.substringAfter(pathWithoutExtension, "_");
     }

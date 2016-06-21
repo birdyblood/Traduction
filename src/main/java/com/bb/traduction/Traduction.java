@@ -1,4 +1,4 @@
-package com.michelin.foa.traduction;
+package com.bb.traduction;
 
 import java.util.Objects;
 
@@ -28,7 +28,7 @@ public class Traduction {
     }
 
 
-    public void generate() {
+    private void generate() {
         generateXls.exportFilePathName = getXlsFile();
         final TranslateFileFactory factory = new TranslateFileFactory();
         final String propertiesPath = Config.getInstance().getProperty(typeFile + ".path");

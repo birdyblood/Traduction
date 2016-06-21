@@ -1,4 +1,4 @@
-package com.michelin.foa.traduction;
+package com.bb.traduction;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -24,7 +24,7 @@ public class CreateProperties {
     /**
      * Integrate properties.
      */
-    public void integrateProperties() {
+    private void integrateProperties() {
         // Find all the file to integrate
         final Path xlsDirectory = Paths.get(Config.getInstance().getProperty("xls.path"));
         try {

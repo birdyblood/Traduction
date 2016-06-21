@@ -1,4 +1,4 @@
-package com.michelin.foa.traduction;
+package com.bb.traduction;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  * Generate a XLS file.
  * Created by FP11523 on 20/02/2016.
  */
-public class ReadXls {
+class ReadXls {
 
     private static final Logger LOGGER = Logger.getLogger(ReadXls.class.getName());
 
@@ -25,7 +25,7 @@ public class ReadXls {
      * @param xlsFile the file xls
      * @return the properties file modified.
      */
-    public Properties read(File xlsFile) {
+    Properties read(File xlsFile) {
         return buildNewProperties(xlsFile, false);
     }
 
@@ -76,7 +76,7 @@ public class ReadXls {
      * @param xlsFile the xls file.
      * @return properties with key
      */
-    public Properties readWithKey(File xlsFile) {
+    Properties readWithKey(File xlsFile) {
         return buildNewProperties(xlsFile, true);
     }
 }

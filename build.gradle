@@ -28,7 +28,7 @@ propFiles.each { propFile ->
         task "exportTrad_${propFile}_${lang}"(type: JavaExec) {
             classpath = sourceSets.main.runtimeClasspath
 
-            main = 'com.michelin.foa.traduction.Traduction'
+            main = 'com.bb.traduction.Traduction'
 
             // arguments to pass to the application
             args propFile, lang
@@ -56,6 +56,6 @@ task exportTrad(type: JavaExec) {
 
 task createProperties(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
-    main = 'com.michelin.foa.traduction.CreateProperties'
+    main = 'com.bb.traduction.CreateProperties'
 }
 

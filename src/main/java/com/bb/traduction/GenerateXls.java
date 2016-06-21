@@ -1,4 +1,4 @@
-package com.michelin.foa.traduction;
+package com.bb.traduction;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.hssf.usermodel.HSSFCell;
@@ -18,20 +18,20 @@ import java.util.Set;
  * Generate a XLS file.
  * Created by FP11523 on 20/02/2016.
  */
-public class GenerateXls {
+class GenerateXls {
 
-    public TranslateFile defaultProperties;
+    TranslateFile defaultProperties;
 
-    public TranslateFile langProperties;
+    TranslateFile langProperties;
 
-    public String exportFilePathName;
+    String exportFilePathName;
 
     /**
      * Generate the excel file.
      *
      * @param typeFile type of the file
      */
-    public void generate(String typeFile) {
+    void generate(String typeFile) {
 
         try (FileOutputStream file = new FileOutputStream(exportFilePathName)) {
             final Workbook workbook = new HSSFWorkbook();
@@ -102,10 +102,8 @@ public class GenerateXls {
      * @return the formula.
      */
     private String getFormula(int number) {
-        final StringBuilder builder = new StringBuilder();
-        builder.append("IF(E").append(number).append("=\"\",\"new\",IF(E");
-        builder.append(number).append(" = D").append(number).append(",\"ok\",\"changed\"))");
-        return builder.toString();
+        return "IF(E" + number + "=\"\",\"new\",IF(E" +
+                number + " = D" + number + ",\"ok\",\"changed\"))";
     }
 
 }

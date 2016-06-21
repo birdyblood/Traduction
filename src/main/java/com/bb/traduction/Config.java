@@ -1,4 +1,4 @@
-package com.michelin.foa.traduction;
+package com.bb.traduction;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,7 +8,7 @@ import java.util.Properties;
  * Configuration class to get all the configuration.
  * Created by fp11523 on 22/02/2016.
  */
-public class Config {
+class Config {
 
     /**
      * The unique instance.
@@ -36,7 +36,7 @@ public class Config {
      * The config instance.
      * @return a config.
      */
-    public static Config getInstance() {
+    static Config getInstance() {
         if (instance == null) {
             instance = new Config();
         }
@@ -48,7 +48,7 @@ public class Config {
      * @param key the key.
      * @return the value.
      */
-    public String getProperty(String key) {
+    String getProperty(String key) {
         return properties.getProperty(key);
     }
 }
